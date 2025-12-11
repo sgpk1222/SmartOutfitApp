@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="筛选条件"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 1. 风格 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="风格" />
+    <Spinner
+        android:id="@+id/spinner_style"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- 2. 天气 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天气" />
+    <Spinner
+        android:id="@+id/spinner_weather"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- 3. 季节 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="季节" />
+    <Spinner
+        android:id="@+id/spinner_season"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- 4. 场景 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="场景" />
+    <Spinner
+        android:id="@+id/spinner_occasion"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="重置"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确认筛选"/>
+    </LinearLayout>
+
+</LinearLayout>
