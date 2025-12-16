@@ -9,29 +9,29 @@ public class Outfit {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    public String title;    // 标题
-    public String imageUrl; // 图片地址
-    public String gender;   // 性别
+    public int userId; // 【新增】记录是谁收藏的
 
-    // === 新增的 4 个标签 ===
-    public String style;    // 风格 (如：休闲、商务)
-    public String weather;  // 天气 (如：晴天、雨天)
-    public String season;   // 季节 (如：春、夏)
-    public String occasion; // 场景 (如：约会、上班)
+    public String title;
+    public String imageUrl;
+    public String gender;
 
-    public boolean isFavorite; // 是否收藏
+    public String style;
+    public String weather;
+    public String season;
+    public String occasion;
 
-    // 更新后的构造函数
+    public boolean isFavorite;
+
     public Outfit(String title, String imageUrl, String gender,
                   String style, String weather, String season, String occasion) {
         this.title = title;
         this.imageUrl = imageUrl;
         this.gender = gender;
-        // 初始化标签
         this.style = style;
         this.weather = weather;
         this.season = season;
         this.occasion = occasion;
         this.isFavorite = false;
+        this.userId = -1; // 默认值
     }
 }

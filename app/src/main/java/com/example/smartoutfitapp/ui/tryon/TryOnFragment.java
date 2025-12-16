@@ -129,7 +129,20 @@ public class TryOnFragment extends Fragment {
     }
 
     private void loadFavorites() {
-        favoriteList = AppDatabase.getDatabase(getContext()).outfitDao().getAllFavorites();
+        // 1. 【新增】先从缓存里拿出当前登录用户的 ID (uid)
+        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE);
+        int uid = prefs.getInt("current_uid", -1);
+
+        // 2. 【核心修改】调用新写的 getFavoritesForUser(uid) 方法，而不是 getAllFavorites()
+        // 这样就只查出了属于这个账号的衣服
+        favoriteList = AppDatabase.getDatabase(getContext()).outfitDao().getFavoritesForUser(uid);
+
+        // 3. (可选优化) 如果列表为空，提示一下用户
+        if (favoriteList.isEmpty()) {
+            android.widget.Toast.makeText(getContext(), "暂无收藏，请先去穿搭页收藏", android.widget.Toast.LENGTH_SHORT).show();
+        }
+
+        // 4. 下面的适配器设置逻辑保持不变
         adapter = new FavoriteAdapter(getContext(), favoriteList, outfit -> {
             viewModel.selectedOutfit.setValue(outfit);
         });

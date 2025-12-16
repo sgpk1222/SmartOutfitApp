@@ -36,13 +36,15 @@ public class LoginViewModel extends AndroidViewModel {
             toastMessage.setValue("请填写完整信息");
             return;
         }
-        // 这里的构造函数会自动把 defStyle 等设为 "不限"
-        User newUser = new User(username, pwd, "unspecified");
+
+        // 【修改点】把 "unspecified" 改成 "all"
+        User newUser = new User(username, pwd, "all");
+
         try {
             db.userDao().insert(newUser);
             toastMessage.setValue("注册成功，请点击登录");
         } catch (Exception e) {
-            toastMessage.setValue("注册失败");
+            toastMessage.setValue("注册失败，可能账号已存在");
         }
     }
 }

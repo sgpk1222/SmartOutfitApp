@@ -11,19 +11,15 @@ import java.util.List;
 
 @Dao
 public interface OutfitDao {
-    // 收藏一个穿搭 (插入数据)
     @Insert
     void insert(Outfit outfit);
 
-    // 取消收藏 (删除数据)
     @Delete
     void delete(Outfit outfit);
 
-    // 查询所有收藏的穿搭 (以后"智能试衣"模块要用这个)
-    @Query("SELECT * FROM outfits")
-    List<Outfit> getAllFavorites();
+    @Query("SELECT * FROM outfits WHERE userId = :uid")
+    List<Outfit> getFavoritesForUser(int uid);
 
-    // 查询某个特定的穿搭 (根据标题查，用来判断当前图片是否已经红心了)
-    @Query("SELECT * FROM outfits WHERE title = :title LIMIT 1")
-    Outfit getOutfitByTitle(String title);
+    @Query("SELECT * FROM outfits WHERE title = :title AND userId = :uid LIMIT 1")
+    Outfit getOutfitByTitleAndUser(String title, int uid);
 }

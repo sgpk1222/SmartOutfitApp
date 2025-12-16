@@ -33,7 +33,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherFragment extends Fragment {
 
-    // TODO: 替换为你的 API Key
     private static final String API_KEY = "5b28d7f36796e35bd52a2e077db0221f";
     private static final String BASE_URL = "https://api.openweathermap.org/";
 
