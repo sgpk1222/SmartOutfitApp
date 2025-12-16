@@ -63,4 +63,9 @@ dependencies {
     implementation("com.google.android.gms:play-services-location:21.1.0")
 
     // ==============================================
+
+    // OkHttp (用于调用阿里云 API)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    // GSON (之前可能加过，确保有)
+    implementation("com.google.code.gson:gson:2.10.1")
 }

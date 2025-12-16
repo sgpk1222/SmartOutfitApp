@@ -100,11 +100,22 @@ public class OutfitFragment extends Fragment {
 
     private void initData() {
         allData.clear();
-        allData.add(new Outfit("春日连衣裙穿搭", "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500", "female", "休闲", "晴天", "春", "不限"));
-        allData.add(new Outfit("夏日清凉穿搭", "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500", "female", "休闲", "晴天", "夏", "不限"));
-        allData.add(new Outfit("秋日休闲穿搭", "https://images.unsplash.com/photo-1512353087810-25dfcd100962?w=500", "male", "休闲", "晴天", "秋", "不限"));
-        allData.add(new Outfit("冬日羽绒服穿搭", "https://images.pexels.com/photos/26115819/pexels-photo-26115819.jpeg", "female", "休闲", "晴天", "冬", "不限"));
-        allData.add(new Outfit("西装商务穿搭", "https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg", "male", "商务", "晴天", "不限", "工作"));
+
+        allData.add(new Outfit("春日连衣裙穿搭",
+                "https://cdn.pixabay.com/photo/2023/02/22/17/42/woman-7807130_1280.jpg",
+                "female", "休闲", "晴天", "春", "不限"));
+        allData.add(new Outfit("夏日清凉穿搭",
+                "https://cdn.pixabay.com/photo/2023/12/13/22/29/young-woman-8447841_1280.jpg",
+                "female", "休闲", "晴天", "夏", "不限"));
+        allData.add(new Outfit("秋日休闲穿搭",
+                "https://cdn.pixabay.com/photo/2016/11/21/15/43/india-1846041_1280.jpg",
+                "male", "休闲", "晴天", "秋", "不限"));
+        allData.add(new Outfit("冬日羽绒服穿搭",
+                "https://cdn.pixabay.com/photo/2023/04/03/09/33/woman-7896408_1280.jpg",
+                "female", "休闲", "晴天", "冬", "不限"));
+        allData.add(new Outfit("西装商务穿搭",
+                "https://cdn.pixabay.com/photo/2023/01/16/09/49/boy-phone-conversation-pic-blazer-7722030_1280.jpg",
+                "male", "商务", "晴天", "不限", "工作"));
     }
 
     private void showFilterDialog() {
